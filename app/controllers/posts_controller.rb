@@ -148,7 +148,7 @@ class PostsController < ApplicationController
     end
     
     def ensure_correct_user
-      @post = Post.find(id: params[:id])
+      @post = Post.find(params[:id])
       if @post.writer_id != current_user.id
         flash[:notice] = "You have no authority to access"
         redirect_to("/posts")

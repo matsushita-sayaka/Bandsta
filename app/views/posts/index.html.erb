@@ -14,7 +14,7 @@
                   <%= link_to "posts/#{p.id}" do %>
                   <!--松下さん-->
                   <% post_detail = PostDetail.find_by(post_id: p.id) %>
-                    <% if post_detail.file_type == "mp4" || post_detail.file_type == "mov" || post_detail.file_type == "m4v" %>
+                    <% if post_detail.file_type == "mp4" || post_detail.file_type == "webm" || post_detail.file_type == "m4v" %>
                       <%= video_tag "/pics/#{p.id}/#{PostDetail.find_by(post_id: p.id).file_name}", autoplay: true, muted: true, loop: true, :class => "post_pic img-responsive full-width" %>
                     <%else%>
                       <% logger.debug("~~~~~~~~~~~~~~~~~~~~~file_name =  #{p.id}") %>
